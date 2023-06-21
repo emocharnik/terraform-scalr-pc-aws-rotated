@@ -20,12 +20,12 @@ resource "scalr_workspace" "provider_configurations" {
   environment_id = scalr_environment.provider_configurations.id
 
   vcs_provider_id = data.scalr_vcs_provider.this.id
-  working_directory = "modules/provider-configurations-aws"
+  working_directory = "modules/provider-configuration-aws"
 
   vcs_repo {
     identifier = "${var.vcs_organization}/terraform-scalr-pc-aws-rotated"
     branch = "main"
-    trigger_prefixes = ["modules/provider-configurations-aws"]
+    trigger_prefixes = ["modules/provider-configuration-aws"]
   }
 }
 
